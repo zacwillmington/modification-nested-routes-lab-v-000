@@ -52,7 +52,8 @@ class SongsController < ApplicationController
               if @song.nil?
                   redirect_to artist_songs_path(@artist)
               else
-                  #reneders view 
+                  #reneders view
+                  binding.pry
               end
           end
       end
