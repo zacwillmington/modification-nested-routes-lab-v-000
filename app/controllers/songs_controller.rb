@@ -46,17 +46,17 @@ class SongsController < ApplicationController
       binding.pry
       if params[:artist_id]
           @artist = Artist.find_by(:id => params[:artist_id])
+
           if @artist.nil?
               redirect_to artists_path(@artist)
+          end
+      else
+          @song = Song.find_by(:id => params[:id])
+          if @song.nil?
+              redirect_to artist_songs_path(@artist)
           else
+              #reneders view
               binding.pry
-              @song = Song.find_by(:id => params[:id])
-              if @song.nil?
-                  redirect_to artist_songs_path(@artist)
-              else
-                  #reneders view
-                  binding.pry
-              end
           end
       end
   end
