@@ -4,11 +4,11 @@
 
   <%= f.label :artist_name %>
   <%= f.text_field :artist_name %>
-  <% if @song.artist.nil? %>
+  <!-- <% if @song.artist.nil? %> -->
   <%= f.select_tag "song[artist_id]", options_from_collection_for_select(Artist.all, :id, :name) %>
-  <% else %>
+  <!-- <% else %> -->
     <%= f.hidden_field :artist_id %>
-  <% end %>
+  <!-- <% end %> -->
   <br />
 
   <%= f.submit %>
