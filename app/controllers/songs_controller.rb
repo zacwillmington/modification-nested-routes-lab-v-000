@@ -45,9 +45,11 @@ class SongsController < ApplicationController
   def edit
       binding.pry
       if params[:artist_id]
+          binding.pry
           @artist = Artist.find_by(id: params[:artist_id])
     if @artist.nil?
-      redirect_to artist_path(@artist)
+        binding.pry
+      redirect_to artists_path(@artist)
     else
       @song = @artist.songs.find_by(id: params[:id])
       if @song.nil?
