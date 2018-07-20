@@ -43,7 +43,6 @@ class SongsController < ApplicationController
   end
 
   def edit
-      binding.pry
       if params[:artist_id]
           @artist = Artist.find_by(:id => params[:artist_id])
 
@@ -56,7 +55,6 @@ class SongsController < ApplicationController
               redirect_to artist_songs_path(@artist)
           else
               #reneders view
-              binding.pry
           end
       end
   end
