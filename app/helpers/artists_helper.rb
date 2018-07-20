@@ -4,6 +4,6 @@ module ArtistsHelper
   end
 
   def artist_select(artist, song)
-      binding.binding.pry
+      binding.pry
   end
 end
