@@ -5,7 +5,7 @@
   <%= f.label :artist_name %>
   <%= f.text_field :artist_name %>
   <% if @song.artist.nil? %>
-  <%= f.select_tag "artist_id"%> <%= f.options_from_collection_for_select(Artist.all, :id, :name) %>
+  <%= f.select "artist_id"%> <%= f.options_from_collection_for_select(Artist.all, :id, :name) %>
   <% else %>
     <%= f.hidden_field :artist_id %>
   <% end %>
